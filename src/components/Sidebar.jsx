@@ -7,7 +7,8 @@ function Sidebar(){
                 {sidebarOptions.map((option,index) => (
                     <li key={index} className="sidebarOptions">
                         <a href={option.href}>{option.name}</a>
-                    </li>))}
+                    </li>
+                ))}
             </ul>
         </div>
     );

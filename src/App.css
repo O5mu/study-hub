@@ -5,33 +5,6 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
 .card {
   padding: 2em;
@@ -43,12 +16,119 @@
 
 .sidebar {
   position: fixed;
-  width: 200px;
+  top: 0px;
+  left: 0px;
+  width: 100px;
   background-color: aquamarine;
-  padding: 20px;
+  padding: 10px;
+  margin: 5px;
   color: white;
+  border: solid burlywood 1px;
+  border-radius: 10px; 
 }
 .sidebarOptions {
   margin: 15px;
   cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
 }
+.cardContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.courseContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+  border: solid rgb(23, 96, 18) 2px;
+  padding: 10px;
+  margin: 10px;
+}
+.courseCard{
+  border: solid rgb(12, 184, 0) 2px;
+  padding: 5px 10px;
+  margin: 20px;
+}
+
+
+/* .title {
+  color: black;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cardContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.courseCard {
+  background: white;
+  padding: 20px;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.courseCard h2 {
+  color: green;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.courseCard h3 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.courseCard .department {
+  color: #ff0000;
+  margin-bottom: 15px;
+}
+
+.infoGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.barContainer {
+  flex-grow: 1;
+  height: 8px;
+  background: #dfffdc;
+  margin: 0 10px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: green;
+  border-radius: 4px;
+}
+
+.mentorIcons {
+  font-size: 1.2rem;
+}
+
+.label {
+  font-weight: 500;
+}
+
+.count {
+  font-weight: bold;
+  margin-left: 10px;
+}
+ */
