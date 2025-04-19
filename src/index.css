@@ -167,3 +167,184 @@ main p {
 .rotate svg:last-child {
   rotate: 180deg;
 }
+/* 
+.cardContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.courseContainer{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  
+
+  gap: 12px;
+  border: solid rgb(23, 96, 18) 2px;
+  padding: 10px;
+  margin: 10px;
+}
+.courseCard{
+  border: solid rgb(12, 184, 0) 2px;
+  padding: 5px 10px;
+  margin: 20px;
+}
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+.single-item {
+  flex-basis: 120px;
+  min-width: 120px;
+}
+.double-item {
+  flex-basis: 250px;
+}
+.triple-item {
+  flex-basis: 380px;
+} */
+
+.courses-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: #2d3436;
+  margin-bottom: 2rem;
+}
+
+.card-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  overflow-x: scroll;
+}
+
+.course-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.course-code {
+  color: #008540;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-title {
+  font-size: 1rem;
+  color: #2d3436;
+  margin-bottom: 0.25rem;
+}
+
+.course-department {
+  font-size: 0.8rem;
+  color: #636e72;
+  font-weight: 400;
+}
+
+.course-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat-item {
+  flex: 1;
+}
+
+.stat-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stat-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #636e72;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #008540;
+  margin-left: auto;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+.tasks-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: #2d3436;
+  margin-bottom: 2rem;
+}
+
+
+
+.task-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 280px;
+  flex: 0 0 auto;
+}
+
+.task-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.task-course {
+  color: #008540;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.task-body {
+  margin-bottom: 1.5rem;
+}
+
+.task-title {
+  font-size: 1.1rem;
+  color: #2d3436;
+  line-height: 1.4;
+}
+
+.task-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+
