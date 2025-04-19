@@ -1,4 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import RecentCourseCard from './RecentCourseCard';
+import CourseCard from './CourseCard';
+
 function Courses() {
   const navigate = useNavigate();
   const handleSignOut = () => {
@@ -20,12 +23,10 @@ function Courses() {
         </div>
       </header>
       <div className="container">
-        <h2>Complete</h2>
-        <p>Complete...</p>
+        <RecentCourseCard/>
       </div>
       <div className="container">
-        <h2>Complete</h2>
-        <p>Complete...</p>
+        <CourseCard/>
       </div>
     </main>
   );

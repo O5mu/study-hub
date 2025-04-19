@@ -20,8 +20,8 @@ function Calendar() {
         </div>
       </header>
       <div className="container">
-        <h2>Complete</h2>
-        <p>Complete...</p>
+        <h2>Not Finished</h2>
+        <p>Will Complete Inshallah Later</p>
       </div>
     </main>
   );
