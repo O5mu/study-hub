@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import TaskCard from './TaskCard';
+import CompletedTaskCard from './CompletedTaskCard';
 function Tasks() {
   const navigate = useNavigate();
   const handleSignOut = () => {
@@ -20,12 +22,10 @@ function Tasks() {
         </div>
       </header>
       <div className="container">
-        <h2>Complete</h2>
-        <p>Complete...</p>
+        <TaskCard/>
       </div>
       <div className="container">
-        <h2>Complete</h2>
-        <p>Complete...</p>
+        <CompletedTaskCard/>
       </div>
     </main>
   );
