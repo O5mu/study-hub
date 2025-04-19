@@ -1,8 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import CourseCard from './CourseCard';
+import TaskCard from './TaskCard';
 function StudentHomepage() {
   const navigate = useNavigate();
   const handleSignOut = () => {
     navigate('/login');
+  };
+  const handleCourses = () => {
+    navigate('/courses');
   };
   return (
     <main>
@@ -20,12 +25,14 @@ function StudentHomepage() {
         </div>
       </header>
       <div className="container">
-        <h2>Upcoming Tasks</h2>
-        <p>No upcoming tasks</p>
+        <a className="hiddenLink" href='/tasks'>
+        <TaskCard/>
+        </a>
       </div>
       <div className="container">
-        <h2>Recent Courses</h2>
-        <p>No recent courses</p>
+        <a className="hiddenLink" href='/courses'>
+        <CourseCard/>
+        </a>
       </div>
     </main>
   );
