@@ -1,30 +1,69 @@
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "../../components/Moderator.css";  // Correct CSS import
+import ModeratorSidebar from "../../components/ModeratorSidebar";
+
 function AddResource() {
-  const navigate = useNavigate();
-  const handleSignOut = () => {
-    navigate('/login');
-  };
+
+  // Simulate dynamic requested uploads
+    const [requestedUploads, setRequestedUploads] = useState([]);
+  
+    useEffect(() => {
+      // Simulate API call to get requested uploads
+      setRequestedUploads([
+        { id: 1, course: "SWE 363", fileName: "Exercise Questions.pdf", size: "1.3 MB", uploader: "Ibrahim Al-Dhafeer" }
+      ]);
+    }, []);
+  
+    // Handle Approve action
+    const handleApprove = (id) => {
+      console.log(`Upload ${id} approved!`);
+    };
+  
+    // Handle Reject action
+    const handleReject = (id) => {
+      console.log(`Upload ${id} rejected!`);
+    };
+  
+    // Handle sidebar navigation clicks
+    const handleNavClick = (section) => {
+      console.log(`Navigating to ${section}`);
+      // Add logic for navigation (e.g., using React Router if needed)
+      // navigate(`/path-to-${section}`);
+    };
   return (
-    <main>
-      <header>
-        <div>
-          <h1>Add Resources</h1>
-          <div>
-            <button id="signout" onClick={handleSignOut}>
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240q17 0 28.5 11.5T480-800q0 17-11.5 28.5T440-760H200v560h240q17 0 28.5 11.5T480-160q0 17-11.5 28.5T440-120H200Zm487-320H400q-17 0-28.5-11.5T360-480q0-17 11.5-28.5T400-520h287l-75-75q-11-11-11-27t11-28q11-12 28-12.5t29 11.5l143 143q12 12 12 28t-12 28L669-309q-12 12-28.5 11.5T612-310q-11-12-10.5-28.5T613-366l74-74Z"/>
-              </svg>
-              <span>Sign Out</span>
-            </button>
+    <div className="container">
+      <ModeratorSidebar onNavClick={handleNavClick} />
+      <div className="main-content">
+        <div className="header">
+          <h2>Add Resource</h2>
+        </div>
+
+        <div className="courses-section">
+          <h3>Associated Courses</h3>
+          <div className="courses">
+            <div className="course-card">
+              <h4 className="course-code green">SWE 363</h4>
+              <p>Web Engineering & Development</p>
+              <p>📦 1.34 GB</p>
+              <div className="buttons">
+                <button className="btn upload">⬆ Upload</button>
+                <button className="btn edit">✏️ Edit</button>
+              </div>
+            </div>
+            <div className="course-card">
+              <h4 className="course-code green">ICS 344</h4>
+              <p>Information Security</p>
+              <p>📦 880.43 MB</p>
+              <div className="buttons">
+                <button className="btn upload">⬆ Upload</button>
+                <button className="btn edit">✏️ Edit</button>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
-      <div className="container">
-        <h2>Complete</h2>
-        <p>Complete...</p>
       </div>
-    </main>
+    </div>
   );
-  }
-  export default AddResource;
-  
+}
+
+export default AddResource;

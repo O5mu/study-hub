@@ -84,6 +84,8 @@ header span {
 
 #sidebar a span {
   flex-grow: 1;
+  display: inline-block;
+  width: 100%;
 }
 
 #sidebar a {
@@ -165,5 +167,3 @@ main p {
 .rotate svg:last-child {
   rotate: 180deg;
 }
-
-
