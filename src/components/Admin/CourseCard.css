@@ -1,0 +1,38 @@
+.course-scroll {
+    display: flex;
+    overflow-x: auto;
+    max-width: 100%;
+    gap: 20px;
+    padding: 10px 0;
+    margin-bottom: 30px;
+  }
+  
+  .course-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+    flex: 0 0 auto;
+    transition: transform 0.2s;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .course-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .course-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  
+  .course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
