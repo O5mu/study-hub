@@ -12,9 +12,10 @@ import ApproveResources from './pages/Moderator/ApproveResources';
 import AddResource from './pages/Moderator/AddResource';
 import AdminHomepage from './pages/Admin/AdminHomepage';
 import ManageCourses from './pages/Admin/ManageCourses';
-import StudentSidebar from './components/StudentSidebar';
-import ModeratorSidebar from './components/ModeratorSidebar';
-import AdminSidebar from './components/AdminSidebar';
+import StudentSidebar from './components/Student/StudentSidebar';
+import ModeratorSidebar from './components/Moderator/ModeratorSidebar';
+import AdminSidebar from './components/Admin/AdminSidebar';
+import ManageAccounts from './pages/Admin/ManageAccounts';
 
 function App() {
   return (
@@ -89,6 +90,12 @@ function App() {
         <AdminSidebar />
         <ManageCourses />
      </div>
+    } />
+    <Route path="/manage-accounts" element={
+      <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}>
+        <AdminSidebar />
+        <ManageAccounts />
+    </div>
     } />
   </Routes>
 </BrowserRouter>

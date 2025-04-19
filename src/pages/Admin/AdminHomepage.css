@@ -1,0 +1,17 @@
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+  
+  .signout-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  
