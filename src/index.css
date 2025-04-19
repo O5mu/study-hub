@@ -84,6 +84,8 @@ header span {
 
 #sidebar a span {
   flex-grow: 1;
+  display: inline-block;
+  width: 100%;
 }
 
 #sidebar a {
@@ -164,4 +166,61 @@ main p {
 
 .rotate svg:last-child {
   rotate: 180deg;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.sidebar .header {
+  background-color: #16a34a;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sidebar nav a {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  color: #374151;
+  transition: 0.2s;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background-color: #bbf7d0;
+  color: #15803d;
+}
+
+.sidebar .help {
+  margin-top: auto;
+  background-color: #dcfce7;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.sidebar .help a {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #16a34a;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
 }

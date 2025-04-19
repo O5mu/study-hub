@@ -1,0 +1,181 @@
+/* Reset and setup base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f6f6f6;
+}
+
+/* Layout container: flex for sidebar and content */
+.container {
+  display: flex;
+  height: 100%;
+  flex-wrap: nowrap; /* Prevent wrapping, keep sidebar fixed */
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background-color: white;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  height: 100%;
+  position: fixed; /* Keeps sidebar fixed */
+  top: 0;
+  left: 0;
+  z-index: 20; /* Keep sidebar above content */
+}
+
+/* Username block */
+.user-name {
+  font-weight: bold;
+  background-color: #dfffe4;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.nav-links li {
+  padding: 10px 0;
+  color: #555;
+  cursor: pointer; /* Make sure the cursor changes to a pointer on hover */
+}
+
+.nav-links li.active {
+  font-weight: bold;
+  color: #34a853;
+}
+
+/* Help center styling */
+.help-center {
+  margin-top: 30px;
+  background-color: #e0f7ec;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.help-icon {
+  font-size: 24px;
+  color: #1a8f5c;
+  margin-bottom: 10px;
+}
+
+.help-btn {
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: none;
+  background-color: #34a853;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Main content area styling */
+.main-content {
+  flex: 1; /* Content takes remaining space */
+  padding: 20px;
+  margin-left: 250px; /* Offset for fixed sidebar */
+  overflow-y: auto;
+  height: 100vh; /* Ensure it takes full viewport height */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Header styling */
+.header h2 {
+  font-size: 24px;
+}
+
+/* Upload section styling */
+.upload-section {
+  margin-top: 30px;
+}
+
+.upload-box {
+  width: 200px;
+  height: 150px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Courses section */
+.courses-section {
+  margin-top: 40px;
+}
+
+.courses {
+  display: flex;
+  gap: 20px;
+}
+
+.course-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.course-code.green {
+  color: #2f9e44;
+}
+
+/* Button styling */
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative; /* Ensure it's clickable */
+  z-index: 10; /* Ensure the button is on top */
+}
+
+.upload {
+  background-color: #34a853;
+  color: white;
+}
+
+.edit {
+  background-color: #c8f7dc;
+}
+
+.approve {
+  background-color: #34a853;
+  color: white;
+}
+
+.reject {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Responsive media query */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px; /* Space between sidebar and content */
+  }
+  .main-content {
+    margin-left: 0; /* Remove sidebar offset */
+  }
+}

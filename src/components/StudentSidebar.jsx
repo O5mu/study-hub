@@ -5,7 +5,8 @@ const StudentSidebar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav id="sidebar">
+    
+   <nav id="sidebar">
       <ul>
         <li>
           <button id="toggle-btn">
