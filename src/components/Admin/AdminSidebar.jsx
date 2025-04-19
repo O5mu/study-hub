@@ -22,6 +22,14 @@ const AdminSidebar = () => {
             <span>Home</span>
           </Link>
         </li>
+        <li className={isActive('/manage-accounts') ? 'active' : ''}>
+  <Link to="/manage-accounts">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+      <path d="M480-160q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-320q0-33-23.5-56.5T480-400q-33 0-56.5 23.5T400-320q0 33 23.5 56.5T480-240ZM240-160v-80q0-33 23.5-56.5T320-320h320q33 0 56.5 23.5T720-240v80h80v-80q0-66-47-113t-113-47H320q-66 0-113 47t-47 113v80h80Z"/>
+    </svg>
+    <span>Manage Accounts</span>
+  </Link>
+</li>
         <li className={isActive('/manage-courses') ? 'active' : ''}>
           <Link to="/manage-courses">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
