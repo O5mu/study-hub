@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Forget from './pages/Login/Forget';
 import Register from './pages/Login/Register';
@@ -18,7 +18,7 @@ import AdminSidebar from './components/AdminSidebar';
 
 function App() {
   return (
-<BrowserRouter>
+<Router>
   <Routes>
     <Route path="/" element={<Login />} />
     <Route path="/login" element={<Login />} />
@@ -59,23 +59,24 @@ function App() {
 
     {/* Moderator Pages */}
     <Route path="/moderator" element={
-      <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}>
-        <ModeratorSidebar />
-        <ModeratorHomepage />
-      </div>
-    } />
-    <Route path="/approve-resources" element={
-      <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}>
-        <ModeratorSidebar />
-        <ApproveResources />
-      </div>
-    } />
-    <Route path="/add-resource" element={
-      <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}>
-        <ModeratorSidebar />
-        <AddResource />
-      </div>
-    } />
+  <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
+    <ModeratorSidebar />  {/* Sidebar for Moderator */}
+    <ModeratorHomepage />  {/* Moderator Homepage Component */}
+  </div>
+} />
+<Route path="/moderator/add-resources" element={
+  <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
+    <ModeratorSidebar />  {/* Sidebar for Moderator */}
+    <AddResource />  {/* Add Resource Component */}
+  </div>
+} />
+<Route path="/moderator/approve-resources" element={
+  <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
+    <ModeratorSidebar />  {/* Sidebar for Moderator */}
+    <ApproveResources />  {/* Approve Resources Component */}
+  </div>
+} />
+
 
     {/* Admin Pages */}
     <Route path="/admin" element={
@@ -91,8 +92,7 @@ function App() {
      </div>
     } />
   </Routes>
-</BrowserRouter>
+  </Router>
   )
 }
-
 export default App
