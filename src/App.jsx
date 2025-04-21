@@ -12,6 +12,7 @@ import ApproveResources from './pages/Moderator/ApproveResources';
 import AddResource from './pages/Moderator/AddResource';
 import AdminHomepage from './pages/Admin/AdminHomepage';
 import ManageCourses from './pages/Admin/ManageCourses';
+
 import StudentSidebar from './components/Student/StudentSidebar';
 import ModeratorSidebar from './components/Moderator/ModeratorSidebar';
 import AdminSidebar from './components/Admin/AdminSidebar';
