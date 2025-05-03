@@ -3,8 +3,7 @@ import resourceIcon from "../../assets/resource-icon.png";
  function RecentCourseCard(){
      const courses = [
          {code:"SWE363",title:"Web Engineering & Development",department:"ICS",mentors:11,resources:14},
-         {code:"ICS253",title:"Discrete Mathmatics",department:"ICS",mentors:9,resources:12},
-         
+         {code:"COE202",title:"Digital Logic",department:"COE",mentors:4,resources:6}
  
      ]
     //  return(
