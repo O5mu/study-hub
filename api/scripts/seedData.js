@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGODB_URI)
   });
 
 const courses = [
-  { courseId: 1, name: 'SWE 363', description: 'Web Development', department: 'ICS', moderatorsCount: 3 }
+  { courseId: 1, name: 'SWE 363', description: 'Web Development', department: 'ICS'}
 ];
 
 const moderators = [

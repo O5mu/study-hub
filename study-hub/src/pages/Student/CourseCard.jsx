@@ -1,7 +1,8 @@
 import resourceIcon from "../../assets/resource-icon.png";
  import mentorIcon from "../../assets/mentor-icon.png";
+import useApi from "../../hooks/useAPI";
  function CourseCard(){
-     const courses = [
+     const coursesOLD = [
          {code:"SWE363",title:"Web Engineering & Development",department:"ICS",mentors:11,resources:14},
          {code:"ICS253",title:"Discrete Mathmatics",department:"ICS",mentors:9,resources:12},
          {code:"COE202",title:"Digital Logic",department:"COE",mentors:4,resources:6},
@@ -9,6 +10,13 @@ import resourceIcon from "../../assets/resource-icon.png";
          {code:"GS321",title:"Psychology of Human Behavior",department:"GS",mentors:1,resources:4}        
  
      ]
+
+
+    const { data: courses, loading, error } = useApi('courses');
+  
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+
     //  return(
     //  <div>
     //      <h1>Courses</h1>
@@ -51,8 +59,8 @@ import resourceIcon from "../../assets/resource-icon.png";
             {courses.map((course, index) => (
               <div className="course-card" key={index}>
                 <div className="course-header">
-                  <h2 className="course-code">{course.code}</h2>
-                  <h3 className="course-title">{course.title}</h3>
+                  <h2 className="course-code">{course.name}</h2>
+                  <h3 className="course-title">{course.description}</h3>
                   <h4 className="course-department">{course.department} Dept</h4>
                 </div>
                 
@@ -61,7 +69,7 @@ import resourceIcon from "../../assets/resource-icon.png";
                     <div className="stat-content">
                       <img src={resourceIcon} alt="Resource" className="stat-icon" />
                       <span className="stat-label">Resources</span>
-                      <span className="stat-value">{course.resources}</span>
+                      <span className="stat-value">{course.resourcesCount}</span>
                     </div>
                   </div>
                   
@@ -69,7 +77,7 @@ import resourceIcon from "../../assets/resource-icon.png";
                     <div className="stat-content">
                       <img src={mentorIcon} alt="Mentor" className="stat-icon" />
                       <span className="stat-label">Mentors</span>
-                      <span className="stat-value">{course.mentors}</span>
+                      <span className="stat-value">{course.moderatorsCount}</span>
                     </div>
                   </div>
                 </div>

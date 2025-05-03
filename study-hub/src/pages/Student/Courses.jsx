@@ -27,12 +27,12 @@ function Courses() {
         </div>
       </header>
       <div className="container">
-        <RecentCourseCard/>
-      </div>
-      <div className="container">
         <CourseCard/>
       </div>
     </main>
   );
 }
 export default Courses;
+//<div className="container">
+//        <RecentCourseCard/>
+//      </div>
