@@ -48,6 +48,7 @@ function App() {
       <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}>
         <StudentSidebar />
         <Tasks />
+        
     </div>
     } />
     <Route path="/calendar" element={
