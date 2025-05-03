@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import CourseCard from '../../components/Admin/CourseCard';
 import ModeratorCard from '../../components/Admin/ModeratorCard';
-import students from '../../data/students';
 import StudentCard from '../../components/Admin/StudentCard';
 import './AdminHomepage.css';
 import useApi from '../../hooks/useAPI';
@@ -11,13 +10,14 @@ function AdminHomepage() {
 
   const { data: courses, loading: cLoading, error: cError } = useApi('courses');
   const { data: moderators, loading: mLoading, error: mError } = useApi('moderators');
+  const { data: students, loading: sLoading, error: sError } = useApi('students');
 
   const handleSignOut = () => {
     navigate('/login');
   };
 
-  if (cLoading || mLoading) return <div>Loading...</div>;
-  if (cError || mError) return <div>Error: {cError || mError}</div>;
+  if (cLoading || mLoading || sLoading) return <div>Loading...</div>;
+  if (cError || mError || sError) return <div>Error: {cError || mError || sError}</div>;
 
   return (
     <main>
@@ -42,7 +42,7 @@ function AdminHomepage() {
       <h2>Students</h2>
       <div className="student-scroll">
         {students.map((s, i) => (
-          <StudentCard key={i} student={s} />
+          <StudentCard key={i} student={s} courses={courses} />
         ))}
       </div>
     </main>

@@ -1,9 +1,25 @@
-import moderators from '../../data/moderators';
-import students from '../../data/students';
+import { useNavigate } from 'react-router-dom';
+import CourseCard from '../../components/Admin/CourseCard';
 import ModeratorCard from '../../components/Admin/ModeratorCard';
 import StudentCard from '../../components/Admin/StudentCard';
+import './AdminHomepage.css';
+import useApi from '../../hooks/useAPI';
 
 function ManageAccounts() {
+
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    navigate('/login');
+  };
+
+  const { data: moderators, loading: mLoading, error: mError } = useApi('moderators');
+  const { data: students, loading: sLoading, error: sError } = useApi('students');
+
+  if (mLoading || sLoading) return <div>Loading...</div>;
+  if (mError || sError) return <div>Error: {mError || sError}</div>;
+
+
   return (
     <main>
       <h2>Moderators</h2>
