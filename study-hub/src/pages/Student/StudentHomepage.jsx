@@ -25,13 +25,13 @@ function StudentHomepage() {
         </div>
       </header>
       <div className="container">
-        <a className="hiddenLink" href='/tasks'>
-        <TaskCard/>
+        <a className="hiddenLink" href='/courses'>
+        <CourseCard/>
         </a>
       </div>
       <div className="container">
-        <a className="hiddenLink" href='/courses'>
-        <CourseCard/>
+        <a className="hiddenLink" href='/tasks'>
+        <TaskCard/>
         </a>
       </div>
     </main>

@@ -18,10 +18,6 @@ const courseSchema = new Schema({
   department: {
     type: String,
     required: true
-  },
-  moderatorsCount: {
-    type: Number,
-    default: 0
   }
 }, { timestamps: true });
 
