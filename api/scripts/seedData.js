@@ -13,35 +13,47 @@ mongoose.connect(process.env.MONGODB_URI)
     process.exit(1);
   });
 
-const courses = [
-  { courseId: 1, name: 'SWE 363', description: 'Web Development', department: 'ICS'}
-];
+  const courses = [
+    { courseId: 1, name: 'SWE 363', description: 'Web Development', department: 'ICS' },
+    { courseId: 2, name: 'COE 292', description: 'Digital Logic', department: 'COE' },
+    { courseId: 3, name: 'ICS 202', description: 'Data Structures', department: 'ICS' },
+    { courseId: 4, name: 'MATH 208', description: 'Calculus II', department: 'Math' },
+    { courseId: 5, name: 'PHYS 101', description: 'General Physics', department: 'Physics' },
+    { courseId: 6, name: 'CHEM 101', description: 'Intro to Chemistry', department: 'Chem' },
+    { courseId: 7, name: 'ENGL 214', description: 'Tech Writing', department: 'English' },
+    { courseId: 8, name: 'IAS 111', description: 'Islamic Studies', department: 'IAS' },
+    { courseId: 9, name: 'STAT 319', description: 'Probability & Stats', department: 'Stat' },
+    { courseId: 10, name: 'ICS 343', description: 'Operating Systems', department: 'ICS' },
+  ];
+  
+  const moderators = [
+    { name: 'Ahmed AlHarthy', courses: [1, 3] },
+    { name: 'Fatimah AlZahrani', courses: [2, 5] },
+    { name: 'Ali AlQahtani', courses: [4, 9] },
+    { name: 'Mona AlShahrani', courses: [3, 10] },
+    { name: 'Salem AlDossary', courses: [6] },
+    { name: 'Rania AlShehri', courses: [7, 8] },
+    { name: 'Tariq AlAmri', courses: [1, 2, 3] },
+    { name: 'Lama AlOtaibi', courses: [10] },
+    { name: 'Nasser AlHarbi', courses: [9] },
+    { name: 'Sara AlAnazi', courses: [5, 7] },
+  ];
+  
+  const students = [
+    { name: 'Yousef AlAli', courses: [1, 2] },
+    { name: 'Reem AlGhamdi', courses: [3, 4, 10] },
+    { name: 'Abdullah AlShammari', courses: [5, 6] },
+    { name: 'Nouf AlYami', courses: [1, 3, 7] },
+    { name: 'Majed AlMutairi', courses: [8] },
+    { name: 'Noura AlDosari', courses: [9, 10] },
+    { name: 'Saad AlMarri', courses: [2, 5, 6] },
+    { name: 'Huda AlShehri', courses: [3, 7, 8] },
+    { name: 'Faisal AlQahtani', courses: [1, 4, 9] },
+    { name: 'Laila AlFahad', courses: [10] },
+  ];
+  
 
-const moderators = [
-  { name: 'Ahmed AlHarthy', courses: [1, 3] }
-];
-
-const students = [
-  { name: 'Yousef AlAli', courses: [1, 2] }
-];
-
-const users = [
-  { 
-    email: 'student@example.com', 
-    password: '1234', 
-    role: 'student' 
-  },
-  {
-    email: 'moderator@example.com',
-    password: '1234',
-    role: 'moderator'
-  },
-  {
-    email: 'admin@example.com',
-    password: '1234',
-    role: 'admin'
-  }
-];
+const users = [];
 
 async function seedData() {
   try {
@@ -61,19 +73,6 @@ async function seedData() {
 
     await Student.insertMany(students);
     console.log('Students seeded');
-
-
-    //HASHING GOES HERE LATER!!!!!!
-    //for (const user of users) {
-    //  const salt = await bcrypt.genSalt(10);
-    //  const hashedPassword = await bcrypt.hash(user.password, salt);
-    //  
-    //  await User.create({
-    //    email: user.email,
-    //    password: hashedPassword,
-    //    role: user.role
-    //  });
-    //}
 
     await User.insertMany(users);
     console.log('Users seeded');

@@ -1,38 +1,71 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CourseCard from '../../components/Admin/CourseCard';
-import ModeratorCard from '../../components/Admin/ModeratorCard';
-import StudentCard from '../../components/Admin/StudentCard';
+import useApi from '../../hooks/useAPI'; // Your custom useApi hook
 import './AdminHomepage.css';
-import useApi from '../../hooks/useAPI';
 
 function ManageAccounts() {
-
   const navigate = useNavigate();
+
+  // Use the useApi hook to fetch all users
+  const { data: users, loading, error } = useApi('users');
+
+  const [formError, setFormError] = useState('');
+
+  const handleRoleChange = async (userId, newRole) => {
+    try {
+      // Make a PUT request to update the user's role using the API
+      const response = await fetch(`http://localhost:5000/api/users/${userId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ role: newRole }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setFormError(result.message || 'Failed to update role');
+        return;
+      }
+
+      // Success, alert the admin and refresh the users list
+      alert('Role updated successfully!');
+    } catch (err) {
+      setFormError('An error occurred. Please try again.');
+    }
+  };
 
   const handleSignOut = () => {
     navigate('/login');
   };
 
-  const { data: moderators, loading: mLoading, error: mError } = useApi('moderators');
-  const { data: students, loading: sLoading, error: sError } = useApi('students');
-
-  if (mLoading || sLoading) return <div>Loading...</div>;
-  if (mError || sError) return <div>Error: {mError || sError}</div>;
-
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <main>
-      <h2>Moderators</h2>
-      <div className="moderator-list">
-        {moderators.map((m, i) => (
-          <ModeratorCard key={i} moderator={m} />
-        ))}
+      <div className="top-bar">
+        <button onClick={handleSignOut} className="signout-btn">Sign Out</button>
       </div>
 
-      <h2>Students</h2>
-      <div className="student-list">
-        {students.map((s, i) => (
-          <StudentCard key={i} student={s} />
+      <h2>Manage Accounts</h2>
+      {formError && <p style={{ color: 'red' }}>{formError}</p>}
+
+      <div className="student-scroll">
+        {users.map((user) => (
+          <div key={user._id} className="student-card">
+            <p><strong>Email:</strong> {user.email}</p>
+            <p><strong>Current Role:</strong> {user.role}</p>
+            <select
+              value={user.role}
+              onChange={(e) => handleRoleChange(user._id, e.target.value)}
+            >
+              <option value="student">Student</option>
+              <option value="moderator">Moderator</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
         ))}
       </div>
     </main>
