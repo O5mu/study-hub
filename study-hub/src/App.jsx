@@ -24,7 +24,7 @@ import ManageAccounts from './pages/Admin/ManageAccounts';
 
 function App() {
   return (
-<Router>
+<Router basename='/study-hub/'>
   <Routes>
     <Route path="/" element={<Login />} />
     <Route path="/login" element={<Login />} />
