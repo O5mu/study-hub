@@ -6,9 +6,14 @@
 
 ## 🔧 Technologies Used
 
-- **Frontend Framework**: React + Vite
+### Frontend
+- **Framework**: React + Vite
 - **Languages**: HTML, CSS, JavaScript
-- **Version Control**: Git & GitHub
+
+### Backend
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB
 
 ---
 
@@ -45,10 +50,13 @@
 
 ## 📂 Repository Details
 
-This repository includes the **Frontend Phase** of the project developed as part of the course:
+This repository contains the complete **full-stack web application** for the **KFUPM Study Hub**, developed as part of:
 
-**SWE 363 – Web Development**  
-**King Fahd University of Petroleum and Minerals**
+- **📘 Course:** SWE 363 – Web Development  
+- **🏫 Institution:** King Fahd University of Petroleum and Minerals (KFUPM)  
+- **🚀 Phase:** Frontend, Backend, and Deployment completed  
+
+The project demonstrates a real-world academic tool built collaboratively by students, covering essential aspects of modern web development—including UI design, API development, database integration, and production deployment.
 
 ---
 
@@ -59,13 +67,6 @@ This repository includes the **Frontend Phase** of the project developed as part
 - **Husam Maslmani**
 - **Faisal Al-Sulami**
 - **Abdulaziz Al-Thukair**
-
----
-
-## 📌 Notes
-
-- Backend development and integration (including email notifications and resource storage) is planned for future phases.
-- Pull requests and suggestions are welcome!
 
 ---
 
